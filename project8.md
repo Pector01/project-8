@@ -1,0 +1,7 @@
+# PECTOR DOCUMENTATION FOR PROJECT 8
+CONFIGURATION OF APACHE AS A LOAD BALANCER I created an ubuntu server 20.04 for this project and named it Project-8-apache-lb ![Instance](./images/instances%20(1).png), I installed Apache Load Balancer on Project-8-apache-lb server and configured it to point traffic coming to Load balancer to both Web Servers. Then i run the following commands to install apache2 and its dependencies on the project 8 terminal: `sudo apt update` `sudo apt install apache2 -y` `sudo apt-get install libxml2-dev` `sudo a2enmod rewrite` `sudo a2enmod proxy` `sudo a2enmod proxy_balancer` `sudo a2enmod proxy_http` `sudo a2enmod headers` `sudo a2enmod lbmethod_bytraffic` then I restarted apache with `sudo systemctl restart apache2` ![Dependency](./images/apache2%20Dependencies.png), I then checked the status ![status](./images/apache2%20status.png)
+- While configuring the Load Balancer, I ran `vi /etc/apache2/sites-available/000-default.conf` and inserted the two webservers private internet protocol addresses then verified the conneection and successful configuration using the load Balancer's (Project-8) public IP plus /index.php ![php](./images/php.PNG), I ran `vi /etc/hosts` file, where I edited and replaced the local IP address numbers with web1 and web2 which gave this output
+- webserver 1 ![ws1](./images/wb1.PNG)
+- webserver 2 ![ws2](./images/wb2.PNG)
+
+THANK YOU DAREY.IO
